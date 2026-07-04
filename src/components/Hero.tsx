@@ -13,7 +13,7 @@ const badges = [
 export default function Hero() {
   return (
     <section className="h-[calc(100vh-88px)] w-full overflow-hidden">
-      <div className="mx-auto grid h-full w-full max-w-[1600px] grid-cols-1 items-center gap-10 px-6 py-6 sm:grid-cols-2 sm:px-10 lg:gap-20 lg:px-16">
+      <div className="mx-auto grid h-full w-full max-w-[1600px] -translate-y-[5vh] grid-cols-1 items-center gap-10 px-6 py-6 sm:grid-cols-2 sm:px-10 lg:gap-20 lg:px-16">
         <div className="flex flex-col items-start gap-4">
           <p className="text-lg opacity-70">Hello 👋, I&apos;m</p>
           <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">Praveen Dedigamage</h1>
