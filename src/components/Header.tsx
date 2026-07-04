@@ -8,6 +8,7 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Me" },
   { href: "/projects", label: "Portfolio" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -18,11 +19,11 @@ export default function Header() {
     <header className="sticky top-0 z-10 w-full bg-background/90 backdrop-blur">
       <nav className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6 text-sm sm:px-10 lg:px-16">
         <Link href="/" className="text-lg font-semibold">
-          <span className="text-accent">P</span>raveenDedigamage
+          Praveen<span className="text-accent">D</span>edigamage
         </Link>
         <div className="flex items-center gap-8">
           <ThemeToggle />
-          <ul className="hidden items-center gap-6 text-xs font-medium tracking-wide uppercase sm:flex">
+          <ul className="hidden items-center gap-5 text-xs font-medium tracking-wide uppercase md:flex">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link
