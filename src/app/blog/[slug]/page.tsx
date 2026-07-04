@@ -6,7 +6,13 @@ import Footer from "@/components/Footer";
 import { posts } from "@/lib/posts";
 
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }));
+  // In dev, include drafts so `npm run dev` can preview them directly by
+  // URL. `output: "export"` requires every rendered slug to be listed here,
+  // even in dev, so this can't just filter unconditionally. Production
+  // builds (what actually gets deployed) always exclude drafts.
+  const isDev = process.env.NODE_ENV !== "production";
+  const visible = isDev ? posts : posts.filter((post) => !post.draft);
+  return visible.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({

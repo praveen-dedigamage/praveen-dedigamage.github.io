@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const sortedPosts = [...posts].sort((a, b) => b.date.localeCompare(a.date));
+  const sortedPosts = posts
+    .filter((post) => !post.draft)
+    .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <>

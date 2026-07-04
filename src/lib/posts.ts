@@ -8,6 +8,11 @@ export type Post = {
   date: string;
   excerpt: string;
   content: ContentBlock[];
+  // Set true while writing a post. Draft posts are excluded from the public
+  // build entirely (no page is generated, so the URL 404s once deployed) —
+  // preview them locally with `npm run dev`, then flip to false/remove when
+  // ready to publish.
+  draft?: boolean;
 };
 
 const p = (text: string): ContentBlock => ({ type: "p", text });
