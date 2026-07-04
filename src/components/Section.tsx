@@ -9,7 +9,7 @@ export default function Section({
 }) {
   return (
     <section className={`w-full ${tint ? "bg-black/[0.02] dark:bg-white/[0.03]" : ""}`}>
-      <div className={`mx-auto max-w-5xl px-6 py-20 ${className}`}>{children}</div>
+      <div className={`mx-auto max-w-[1600px] px-6 py-20 sm:px-10 lg:px-16 ${className}`}>{children}</div>
     </section>
   );
 }
