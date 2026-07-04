@@ -1,0 +1,55 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="700" height="400" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Astrocyte process wrapping the synapse -->
+  <path d="M 90 90 Q 350 20 610 90 Q 640 180 610 260 Q 350 300 90 260 Q 60 180 90 90 Z"
+        fill="#22c55e" fill-opacity="0.12" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="350" y="55" text-anchor="middle" fill="#16a34a" font-size="16" font-weight="700">Astrocyte process</text>
+
+  <!-- Presynaptic terminal -->
+  <path d="M 110 150 Q 110 110 160 110 L 230 110 Q 260 150 230 190 L 160 190 Q 110 190 110 150 Z"
+        fill="#3b82f6" fill-opacity="0.85"/>
+  <text x="170" y="150" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Presynaptic</text>
+  <text x="170" y="168" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">neuron</text>
+
+  <!-- vesicles -->
+  <circle cx="200" cy="125" r="6" fill="#1d4ed8"/>
+  <circle cx="215" cy="140" r="6" fill="#1d4ed8"/>
+  <circle cx="205" cy="155" r="6" fill="#1d4ed8"/>
+
+  <!-- Synaptic cleft -->
+  <rect x="260" y="120" width="180" height="60" fill="#f3f4f6"/>
+  <text x="350" y="155" text-anchor="middle" fill="#6b7280" font-size="13">synaptic cleft</text>
+
+  <!-- Postsynaptic spine -->
+  <path d="M 590 150 Q 590 110 540 110 L 470 110 Q 440 150 470 190 L 540 190 Q 590 190 590 150 Z"
+        fill="#f97316" fill-opacity="0.85"/>
+  <text x="530" y="150" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Postsynaptic</text>
+  <text x="530" y="168" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">neuron</text>
+
+  <!-- receptors -->
+  <rect x="470" y="118" width="10" height="10" fill="#c2410c"/>
+  <rect x="470" y="145" width="10" height="10" fill="#c2410c"/>
+  <rect x="470" y="172" width="10" height="10" fill="#c2410c"/>
+
+  <!-- glutamate arrow: presynaptic -> astrocyte -->
+  <path d="M 250 115 Q 300 70 340 75" fill="none" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="255" y="90" fill="#1d4ed8" font-size="12" font-weight="600">glutamate</text>
+
+  <!-- gliotransmitter arrow: astrocyte -> synapse -->
+  <path d="M 380 90 Q 400 105 380 118" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="392" y="245" fill="#16a34a" font-size="12" font-weight="600">gliotransmitter</text>
+  <path d="M 400 220 Q 380 200 350 190" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Ca2+ signal inside astrocyte -->
+  <text x="350" y="255" text-anchor="middle" fill="#15803d" font-size="13" font-weight="600">Ca2+ signaling</text>
+
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#16a34a"/>
+    </marker>
+  </defs>
+</svg>

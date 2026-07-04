@@ -1,0 +1,60 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="700" height="420" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Coalesced panel -->
+  <text x="175" y="35" text-anchor="middle" fill="#16a34a" font-size="16" font-weight="700">Coalesced access</text>
+  <!-- threads -->
+  <g id="threads-good">
+    <!-- 8 thread boxes -->
+    <g font-size="11" fill="#ffffff" text-anchor="middle">
+      <rect x="30" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="50" y="73">T0</text>
+      <rect x="75" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="95" y="73">T1</text>
+      <rect x="120" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="140" y="73">T2</text>
+      <rect x="165" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="185" y="73">T3</text>
+      <rect x="210" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="230" y="73">T4</text>
+      <rect x="255" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="275" y="73">T5</text>
+      <rect x="300" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="320" y="73">T6</text>
+      <rect x="345" y="55" width="40" height="28" rx="4" fill="#22c55e"/><text x="365" y="73">T7</text>
+    </g>
+  </g>
+  <!-- memory row -->
+  <rect x="30" y="150" width="355" height="34" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="207" y="172" text-anchor="middle" fill="#15803d" font-size="12">contiguous memory addresses</text>
+  <!-- arrows -->
+  <g stroke="#16a34a" stroke-width="1.5" fill="none">
+    <path d="M50,83 L50,150"/><path d="M95,83 L95,150"/><path d="M140,83 L140,150"/><path d="M185,83 L185,150"/>
+    <path d="M230,83 L230,150"/><path d="M275,83 L275,150"/><path d="M320,83 L320,150"/><path d="M365,83 L365,150"/>
+  </g>
+  <rect x="20" y="200" width="375" height="30" rx="6" fill="#16a34a"/>
+  <text x="207" y="220" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">= 1 memory transaction</text>
+
+  <!-- divider -->
+  <line x1="420" y1="20" x2="420" y2="400" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Strided panel -->
+  <text x="565" y="35" text-anchor="middle" fill="#dc2626" font-size="16" font-weight="700">Strided / scattered access</text>
+  <g font-size="11" fill="#ffffff" text-anchor="middle">
+    <rect x="450" y="55" width="40" height="28" rx="4" fill="#ef4444"/><text x="470" y="73">T0</text>
+    <rect x="495" y="55" width="40" height="28" rx="4" fill="#ef4444"/><text x="515" y="73">T1</text>
+    <rect x="540" y="55" width="40" height="28" rx="4" fill="#ef4444"/><text x="560" y="73">T2</text>
+    <rect x="585" y="55" width="40" height="28" rx="4" fill="#ef4444"/><text x="605" y="73">T3</text>
+    <rect x="630" y="55" width="40" height="28" rx="4" fill="#ef4444"/><text x="650" y="73">T4</text>
+  </g>
+  <!-- scattered addresses -->
+  <g fill="#fee2e2" stroke="#dc2626" stroke-width="1.5">
+    <rect x="440" y="150" width="24" height="24"/>
+    <rect x="490" y="230" width="24" height="24"/>
+    <rect x="540" y="180" width="24" height="24"/>
+    <rect x="590" y="260" width="24" height="24"/>
+    <rect x="640" y="200" width="24" height="24"/>
+  </g>
+  <g stroke="#dc2626" stroke-width="1.5" fill="none" stroke-dasharray="3 3">
+    <path d="M470,83 L452,150"/>
+    <path d="M515,83 L502,230"/>
+    <path d="M560,83 L552,180"/>
+    <path d="M605,83 L602,260"/>
+    <path d="M650,83 L652,200"/>
+  </g>
+  <rect x="440" y="320" width="230" height="30" rx="6" fill="#dc2626"/>
+  <text x="555" y="340" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">= up to 5 separate transactions</text>
+</svg>
