@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <Section className="flex min-h-[calc(100vh-88px)] flex-col gap-8 justify-center">
+      <Section className="flex flex-col gap-8">
         <h1 className="text-3xl font-bold">
           <span className="text-accent">/</span> Portfolio
         </h1>

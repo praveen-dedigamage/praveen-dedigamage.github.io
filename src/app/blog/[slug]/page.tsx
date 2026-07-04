@@ -29,7 +29,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <Section className="flex min-h-[calc(100vh-88px)] flex-col justify-center gap-6">
+      <Section className="flex flex-col gap-6">
         <div>
           <h1 className="text-3xl font-bold">{post.title}</h1>
           <p className="mt-2 text-xs opacity-60">{post.date}</p>

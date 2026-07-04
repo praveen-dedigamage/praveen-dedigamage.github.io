@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Section className="flex min-h-[calc(100vh-88px)] flex-col justify-center gap-6">
+      <Section className="flex flex-col gap-6">
         <h1 className="text-3xl font-bold">
           <span className="text-accent">/</span> About Me
         </h1>
