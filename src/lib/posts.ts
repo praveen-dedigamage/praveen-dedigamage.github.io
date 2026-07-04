@@ -7,29 +7,31 @@ export type Post = {
 };
 
 // Add new posts here — newest first. Each paragraph in `content` renders as
-// its own <p>.
+// its own <p>. Keep these to tech/domain-knowledge content (GPU computing,
+// computational neuroscience, simulation tooling) rather than personal updates.
 export const posts: Post[] = [
   {
-    slug: "starting-my-phd",
-    title: "Starting my PhD at Tampere University",
+    slug: "tripartite-synapse-explained",
+    title: "The Tripartite Synapse: Why Astrocytes Matter in Neural Models",
     date: "2026-07-01",
     excerpt:
-      "Kicking off a PhD on computational astrocyte models and large-scale GPU-based neuron-astrocyte simulation.",
+      "A synapse isn't just pre- and post-synaptic neurons — astrocytes are active third players, and models are starting to reflect that.",
     content: [
-      "I started my PhD at Tampere University, supervised by Prof. Marja-Leena Linne. The focus is on computational astrocyte models and learning to run large-scale, GPU-based neuron-astrocyte simulations.",
-      "The first year centers on getting familiar with the NEST simulator and its GPU ecosystem, finishing up my MSc thesis for journal submission, and building out a computational framework for large-scale simulation on HPC infrastructure.",
-      "More detailed notes as the literature review and early experiments progress.",
+      "Classical neural models treat a synapse as a two-party exchange: a presynaptic neuron releases neurotransmitter, a postsynaptic neuron responds. The tripartite synapse framework adds a third element — the astrocyte process wrapped around the synaptic cleft, which senses neurotransmitter spillover, responds with calcium signaling, and releases gliotransmitters back that modulate transmission.",
+      "This matters for anyone modeling neural circuits at scale: astrocyte-mediated modulation introduces slower, diffusive feedback loops that can synchronize groups of synapses, contribute to short- and long-term plasticity, and affect network-level dynamics like oscillations or hyperexcitability.",
+      "Computationally, this means coupling a fast spiking-neuron model to a much slower calcium-signaling model (typically ODE-based, following formulations like Li-Rinzel or De Pittà-Ullah) — a stiff, multi-timescale system that's non-trivial to simulate efficiently at network scale, which is exactly where GPU acceleration starts to matter.",
     ],
   },
   {
-    slug: "gpu-sandbox-devboard",
-    title: "Picking a dev board for a local GPU sandbox",
+    slug: "gpu-memory-coalescing",
+    title: "GPU Memory Coalescing: Why Access Patterns Matter More Than FLOPs",
     date: "2026-07-02",
     excerpt:
-      "Before touching a supercomputer, it helps to have a small local sandbox to get GPU programming fundamentals right.",
+      "A kernel with fewer operations can run slower than one with more, purely because of how threads access memory.",
     content: [
-      "One of my first side tasks was selecting a dev board for a local sandbox environment — something to prototype and test GPU code on before it ever touches a shared cluster.",
-      "Full writeup and hardware details to follow once the setup is finalized.",
+      "GPUs execute threads in groups (warps of 32 on NVIDIA hardware). When threads in a warp access global memory, the hardware tries to combine those accesses into as few memory transactions as possible — this is coalescing. If consecutive threads read consecutive addresses, the whole warp's request can be served by one or two transactions instead of 32.",
+      "In practice this means data layout often matters more than raw arithmetic intensity: a naive row-major vs. column-major mismatch, or an array-of-structs layout instead of struct-of-arrays, can turn a memory-bound kernel from fast to an order of magnitude slower, with no change to the actual math being computed.",
+      "For large-scale neuron-astrocyte simulations, this shows up directly in how per-neuron and per-synapse state variables are laid out in memory — getting this wrong is one of the easiest ways to leave most of a GPU's bandwidth unused.",
     ],
   },
 ];
