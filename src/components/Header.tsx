@@ -19,7 +19,7 @@ export default function Header() {
     <header className="sticky top-0 z-10 w-full bg-background/90 backdrop-blur">
       <nav className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6 text-sm sm:px-10 lg:px-16">
         <Link href="/" className="text-lg font-semibold">
-          Praveen<span className="text-accent">D</span>edigamage
+          <span className="text-accent">P</span>raveen<span className="text-accent">D</span>edigamage
         </Link>
         <div className="flex items-center gap-8">
           <ThemeToggle />
