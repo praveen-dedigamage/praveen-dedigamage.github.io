@@ -54,7 +54,7 @@ export const posts: Post[] = [
   {
     slug: "gpu-memory-coalescing",
     title: "GPU Memory Coalescing: Why Access Patterns Matter More Than FLOPs",
-    date: "2026-07-02",
+    date: "2026-07-04",
     excerpt:
       "A kernel with fewer operations can run slower than one with more, purely because of how threads access memory.",
     content: [

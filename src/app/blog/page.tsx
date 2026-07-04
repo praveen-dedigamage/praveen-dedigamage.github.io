@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const sortedPosts = [...posts].sort((a, b) => b.date.localeCompare(a.date));
+
   return (
     <>
       <Section className="flex flex-col gap-8">
@@ -16,7 +18,7 @@ export default function BlogPage() {
           <span className="text-accent">/</span> Blog
         </h1>
         <ul className="flex flex-col gap-8">
-          {posts.map((post) => (
+          {sortedPosts.map((post) => (
             <li key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
