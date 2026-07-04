@@ -32,7 +32,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="relative mx-auto h-72 w-72 sm:h-80 sm:w-80 lg:h-[26rem] lg:w-[26rem]">
+        <div className="relative mx-auto h-72 w-72 translate-x-[5vw] sm:h-80 sm:w-80 lg:h-[26rem] lg:w-[26rem]">
           <div className="absolute inset-0 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-gradient-to-br from-accent/30 to-blue-500/20" />
           <Image
             src="/profile.png"
