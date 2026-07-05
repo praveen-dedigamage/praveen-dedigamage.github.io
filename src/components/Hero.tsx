@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const badges = [
   { label: "CUDA", className: "left-2 top-6 bg-[#76b900] text-black" },
-  { label: "Py", className: "right-0 top-2 bg-[#3776ab] text-white" },
+  { label: "Python", className: "right-0 top-2 bg-[#3776ab] text-white" },
   { label: "C++", className: "left-0 top-1/2 bg-[#00599c] text-white" },
   { label: "NEST", className: "right-2 top-1/3 bg-[#0b5ed7] text-white" },
   { label: "PyTorch", className: "left-6 bottom-4 bg-[#ee4c2c] text-white" },
