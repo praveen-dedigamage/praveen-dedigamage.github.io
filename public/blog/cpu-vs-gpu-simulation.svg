@@ -1,0 +1,60 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="700" height="420" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- CPU panel -->
+  <text x="175" y="35" text-anchor="middle" fill="#3b82f6" font-size="16" font-weight="700">CPU cluster (MPI ranks)</text>
+  <g>
+    <rect x="40" y="60" width="90" height="90" rx="8" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="85" y="100" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">Rank 0</text>
+    <text x="85" y="118" text-anchor="middle" fill="#1d4ed8" font-size="10">~10k neurons</text>
+
+    <rect x="150" y="60" width="90" height="90" rx="8" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="195" y="100" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">Rank 1</text>
+    <text x="195" y="118" text-anchor="middle" fill="#1d4ed8" font-size="10">~10k neurons</text>
+
+    <rect x="260" y="60" width="90" height="90" rx="8" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="305" y="100" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">Rank 2</text>
+    <text x="305" y="118" text-anchor="middle" fill="#1d4ed8" font-size="10">~10k neurons</text>
+  </g>
+  <!-- MPI links -->
+  <g stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 3">
+    <path d="M130,105 L150,105"/>
+    <path d="M240,105 L260,105"/>
+  </g>
+  <text x="175" y="180" text-anchor="middle" fill="#1d4ed8" font-size="11">spike messages exchanged over the network</text>
+  <text x="175" y="200" text-anchor="middle" fill="#6b7280" font-size="11">coarse-grained parallelism: tens of cores</text>
+
+  <!-- divider -->
+  <line x1="380" y1="20" x2="380" y2="400" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- GPU panel -->
+  <text x="545" y="35" text-anchor="middle" fill="#16a34a" font-size="16" font-weight="700">GPU (thousands of threads)</text>
+  <!-- grid of small squares representing threads/neurons -->
+  <g fill="#22c55e">
+    <rect x="410" y="55" width="14" height="14" rx="2"/><rect x="430" y="55" width="14" height="14" rx="2"/><rect x="450" y="55" width="14" height="14" rx="2"/><rect x="470" y="55" width="14" height="14" rx="2"/><rect x="490" y="55" width="14" height="14" rx="2"/><rect x="510" y="55" width="14" height="14" rx="2"/><rect x="530" y="55" width="14" height="14" rx="2"/><rect x="550" y="55" width="14" height="14" rx="2"/><rect x="570" y="55" width="14" height="14" rx="2"/><rect x="590" y="55" width="14" height="14" rx="2"/><rect x="610" y="55" width="14" height="14" rx="2"/><rect x="630" y="55" width="14" height="14" rx="2"/><rect x="650" y="55" width="14" height="14" rx="2"/>
+
+    <rect x="410" y="75" width="14" height="14" rx="2"/><rect x="430" y="75" width="14" height="14" rx="2"/><rect x="450" y="75" width="14" height="14" rx="2"/><rect x="470" y="75" width="14" height="14" rx="2"/><rect x="490" y="75" width="14" height="14" rx="2"/><rect x="510" y="75" width="14" height="14" rx="2"/><rect x="530" y="75" width="14" height="14" rx="2"/><rect x="550" y="75" width="14" height="14" rx="2"/><rect x="570" y="75" width="14" height="14" rx="2"/><rect x="590" y="75" width="14" height="14" rx="2"/><rect x="610" y="75" width="14" height="14" rx="2"/><rect x="630" y="75" width="14" height="14" rx="2"/><rect x="650" y="75" width="14" height="14" rx="2"/>
+
+    <rect x="410" y="95" width="14" height="14" rx="2"/><rect x="430" y="95" width="14" height="14" rx="2"/><rect x="450" y="95" width="14" height="14" rx="2"/><rect x="470" y="95" width="14" height="14" rx="2"/><rect x="490" y="95" width="14" height="14" rx="2"/><rect x="510" y="95" width="14" height="14" rx="2"/><rect x="530" y="95" width="14" height="14" rx="2"/><rect x="550" y="95" width="14" height="14" rx="2"/><rect x="570" y="95" width="14" height="14" rx="2"/><rect x="590" y="95" width="14" height="14" rx="2"/><rect x="610" y="95" width="14" height="14" rx="2"/><rect x="630" y="95" width="14" height="14" rx="2"/><rect x="650" y="95" width="14" height="14" rx="2"/>
+
+    <rect x="410" y="115" width="14" height="14" rx="2"/><rect x="430" y="115" width="14" height="14" rx="2"/><rect x="450" y="115" width="14" height="14" rx="2"/><rect x="470" y="115" width="14" height="14" rx="2"/><rect x="490" y="115" width="14" height="14" rx="2"/><rect x="510" y="115" width="14" height="14" rx="2"/><rect x="530" y="115" width="14" height="14" rx="2"/><rect x="550" y="115" width="14" height="14" rx="2"/><rect x="570" y="115" width="14" height="14" rx="2"/><rect x="590" y="115" width="14" height="14" rx="2"/><rect x="610" y="115" width="14" height="14" rx="2"/><rect x="630" y="115" width="14" height="14" rx="2"/><rect x="650" y="115" width="14" height="14" rx="2"/>
+  </g>
+  <text x="530" y="150" text-anchor="middle" fill="#16a34a" font-size="11">1 thread ≈ 1 neuron</text>
+  <text x="530" y="170" text-anchor="middle" fill="#6b7280" font-size="11">fine-grained parallelism: thousands of threads</text>
+  <text x="530" y="190" text-anchor="middle" fill="#6b7280" font-size="11">on-chip memory, no network hop for spikes</text>
+
+  <!-- bottom callouts -->
+  <rect x="30" y="240" width="330" height="150" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="45" y="265" fill="#1d4ed8" font-size="12" font-weight="700">CPU strengths</text>
+  <text x="45" y="285" fill="#1e3a8a" font-size="11">- Flexible, pointer-based data structures</text>
+  <text x="45" y="303" fill="#1e3a8a" font-size="11">- Easy to add complex per-neuron logic</text>
+  <text x="45" y="321" fill="#1e3a8a" font-size="11">- Scales via more nodes (MPI), but each</text>
+  <text x="45" y="337" fill="#1e3a8a" font-size="11">  node/core is comparatively slow</text>
+
+  <rect x="380" y="240" width="290" height="150" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+  <text x="395" y="265" fill="#15803d" font-size="12" font-weight="700">GPU strengths</text>
+  <text x="395" y="285" fill="#14532d" font-size="11">- Massive raw throughput per chip</text>
+  <text x="395" y="303" fill="#14532d" font-size="11">- Needs data laid out for coalesced,</text>
+  <text x="395" y="319" fill="#14532d" font-size="11">  branch-free access (see memory</text>
+  <text x="395" y="335" fill="#14532d" font-size="11">  coalescing post)</text>
+</svg>

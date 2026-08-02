@@ -28,6 +28,35 @@ const figure = (src: string, alt: string, caption: string): ContentBlock => ({
 // rather than personal updates. Figures live in public/blog/.
 export const posts: Post[] = [
   {
+    slug: "cpu-vs-gpu-spiking-simulators",
+    title: "CPU vs. GPU: What Changes When Scaling Spiking Network Simulators",
+    date: "2026-07-05",
+    excerpt:
+      "Moving a simulator from a CPU cluster to a GPU isn't just 'more cores' — it changes the data structures, the parallelism granularity, and how spikes get delivered.",
+    content: [
+      p(
+        "Classical spiking neural network simulators — NEST, NEURON, Brian2 on CPU — scale out the way most scientific HPC codes do: split the neuron population across MPI ranks, run each rank's slice of neurons on a handful of CPU cores, and exchange spikes between ranks as network messages once per communication interval. This works well because CPU cores are flexible: each one can run fairly complex per-neuron logic, follow pointers through sparse connectivity structures, and branch freely without much of a performance penalty."
+      ),
+      p(
+        "A GPU flips the granularity of parallelism entirely. Instead of a few dozen powerful cores each handling thousands of neurons, a GPU offers thousands of much simpler threads, each ideally handling one neuron (or a handful of synapses) at a time. That's a good match for spiking networks in principle — neuron updates are largely independent of each other within a time step — but it only pays off if the surrounding data structures are redesigned for it, not just recompiled onto new hardware."
+      ),
+      figure(
+        "/blog/cpu-vs-gpu-simulation.svg",
+        "Diagram comparing a CPU cluster running spiking neural network simulation via MPI ranks with coarse-grained parallelism, against a GPU running the same simulation with thousands of threads in fine-grained parallelism",
+        "CPU clusters parallelize coarsely across MPI ranks with network communication; GPUs parallelize finely across thousands of threads with on-chip memory."
+      ),
+      p(
+        "The first thing that breaks is connectivity representation. CPU simulators are comfortable with sparse, pointer-heavy structures — every neuron holds a list of its synapses, built however is convenient. On a GPU, that same structure causes exactly the scattered memory access problem that kills coalescing (see the earlier post on memory coalescing): thousands of threads chasing thousands of unrelated pointers is close to a worst case for GPU memory bandwidth. Efficient GPU simulators instead flatten connectivity into contiguous, often compressed-sparse-row-like arrays built once during network construction — which turns 'build the network' from a cheap bookkeeping step into a nontrivial parallel algorithm in its own right."
+      ),
+      p(
+        "The second thing that changes is spike delivery. On a CPU cluster, delivering a spike to its targets is a matter of walking a list and, when a target lives on another rank, sending an MPI message — communication is relatively infrequent and can tolerate some latency. On a GPU, or across multiple GPUs, the same problem needs to be re-expressed as a highly parallel operation: many threads producing spikes simultaneously, needing to scatter them into per-target event buffers without threads stepping on each other's writes, and — once multiple GPUs are involved — needing GPU-to-GPU communication (ideally via NVLink or GPU-aware MPI) to avoid constantly bouncing data back through the host CPU."
+      ),
+      p(
+        "None of this is free intellectually, which is exactly why GPU ports of established simulators (like ongoing GPU backend work in the NEST ecosystem) are substantial engineering projects rather than a recompilation flag. But the payoff is real: once the data layout and communication pattern are right, a GPU can push through orders of magnitude more neuron-updates-per-second than the equivalent CPU cluster, for a fraction of the power and hardware footprint — which is the whole reason exascale-class neuron (and neuron-astrocyte) simulation is being built around GPUs rather than ever-larger CPU clusters."
+      ),
+    ],
+  },
+  {
     slug: "tripartite-synapse-explained",
     title: "The Tripartite Synapse: Why Astrocytes Matter in Neural Models",
     date: "2026-07-01",
