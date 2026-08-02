@@ -30,7 +30,7 @@ export const posts: Post[] = [
   {
     slug: "cpu-vs-gpu-spiking-simulators",
     title: "CPU vs. GPU: What Changes When Scaling Spiking Network Simulators",
-    date: "2026-07-05",
+    date: "2026-08-02",
     excerpt:
       "Moving a simulator from a CPU cluster to a GPU isn't just 'more cores' — it changes the data structures, the parallelism granularity, and how spikes get delivered.",
     content: [
